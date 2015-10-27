@@ -62,8 +62,8 @@ a{text-decoration: none; display:block; width:100%; color:#000;}
 .custom-button:hover{color:#FFF;}
 
 /* button color for login */
-.login-button{background-color:#1D4461; color:#FFF;}
-.login-button:hover{background-color:#1D4461; color:#FFF;}
+.login-button{background-color:#7CDACA; color:#FFF;}
+.login-button:hover{background-color:#7CDACA; color:#FFF;}
 
 /* back button color */
 .button-clear.button-clear {color:#FFF;}
