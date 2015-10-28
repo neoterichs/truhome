@@ -9,6 +9,7 @@
     <script src="js/ng-cordova.min.js"></script>
     <script src="cordova.js"></script>
     <script src="js/angular-ios9-uiwebview.patch.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB16sGmIekuGIvYOfNoW9T44377IU2d2Es&sensor=true"></script>
     <link href="css/style.css" rel="stylesheet">
   </head>
 <body ng-controller="MainCtrl">
@@ -39,7 +40,7 @@
 		  <a href="#/event/check-in" class="item item-icon-left" menu-close><i class="icon ion-home"></i>Home</a>
 		  <a href="#/event/about" class="item item-icon-left" menu-close><i class="icon ion-person"></i>About</a>
 		  <a href="#/event/services" class="item item-icon-left" menu-close><i class="icon ion-android-apps"></i>Services</a>
-		  <a href="#/event/setting" class="item item-icon-left" menu-close><i class="icon ion-android-pin"></i>Contact us</a>
+		  <a href="#/event/contactus" class="item item-icon-left" menu-close><i class="icon ion-android-pin"></i>Contact us</a>
 		  <a href="#/event/sign-in" class="item item-icon-left" menu-close><i class="icon ion-log-in"></i>Sign in</a>
 		</ul>
 	  </ion-content>
@@ -65,16 +66,16 @@
             <div id="logo">
               <img src="images\slider\bg1.jpg" style=" height:100%; width:100%;">
             </div>
-            <p style="text-align:center; color:#FFF; margin-top:-300px; font-size:16px;">
+            <p style="text-align:center; color:#FFF; margin-top:-310px; font-size:16px;">
               Welcome to <strong>TruHome</strong>
 			<p style="text-align:center; color:#FFF; font-size:16px;">The Premier Source For Home Automation Professionals.</p>
 			</p>
           </ion-slide>
           <ion-slide>
             <div id="logo">
-              <img src="images\slider\bg2.png" style=" height:100%; width:100%;">
+              <img src="images\slider\bg2.jpg" style=" height:100%; width:100%;">
             </div>
-            <p style="font-weight:bold; text-align:center; color:#FFF; margin-top:-320px; font-size:16px; text-align-center;">
+            <p style="font-weight:bold; text-align:center; color:#FFF; margin-top:-310px; font-size:16px; text-align-center;">
               Find Your Smart Home Pro Today
             </p>
           </ion-slide>
@@ -82,7 +83,7 @@
             <div id="logo">
               <img src="images\slider\bg3.jpg" style=" height:100%; width:100%;">
 			</div>
-            <p style="font-weight:bold; text-align:center; color:#FFF; margin-top:-280px; font-size:16px; text-align-center;">
+            <p style="font-weight:bold; text-align:center; color:#FFF; margin-top:-310px; font-size:16px; text-align-center;">
               Connect Your Wearable Devices to Your Smart Home
             </p>
           </ion-slide>
@@ -94,32 +95,33 @@
 <script id="templates/about.html" type="text/ng-template">
   <ion-view view-title="About">
 	<ion-content>
-	  <ion-slide-box on-slide-changed="slideChanged(index)" auto-play="true" does-continue="true">
-          <ion-slide>
-            <div id="logo">
-              <img src="images\about\about-01.jpg" style=" height:50%; width:100%;">
-            </div>
-            <p style=" margin:5px; text-decoration:justify;">
-             Educate homeowners on the exciting advancements in the smart home industry. We want to teach people about the different types of home automation technologies on the market today and the benefits of using each of them. With this knowledge, homeowners can decide which smart home products best suite their lifestyle. 
-			</p>
-          </ion-slide>
-		  <ion-slide>
-            <div id="logo">
-               <img src="images\about\about-02.jpg" style=" height:50%; width:100%;">
-            </div>
-            <p style=" margin:5px; text-decoration:justify;">
-              Connect homeowners with local smart home installers. The smart home industry is confusing enough as it is. Finding trusted smart home professionals should not be confusing too. Who wants to sort through dozens of "pros" to find one who has good reviews and isn't going to charge you a fortune? Umm..NOBODY. Which is why our team at TruHome hand selects the most qualified service providers in the country. We don't settle for anything less than perfection. 
-			</p>
-          </ion-slide>
-		  <ion-slide>
-            <div id="logo">
-               <img src="images\about\about-03.jpg" style=" height:50%; width:100%;">
-            </div>
-            <p style=" margin:5px; text-decoration:justify;">
-              Simplify the process of maintaining a smart home by offering affordable service plans. Smart homes make life simpler. Maintaining your smart home should be simple too. Thats why we offer annual service plans to homeowners who want peace of mind. If you ever experience issues with your smart home system we will send a technician to fix the problem immediately, free of charge. 
-			</p>
-          </ion-slide>
-          
+	  <div class="list">
+		<div class="item item-avatar">
+			<img src="images/icon.png">
+			<h2>Welcome To TruHome</h2>
+			<p style=" font-size:11px;">We have THREE missions at TruHome.</p>
+		</div>
+	
+		<div class="item item-image" style="border-bottom:none">
+			<p style="text-decoration:justify; text-align:left; padding:0px 20px 20px 20px;  font-size:15px; white-space:normal;"><b>1.</b> Educate homeowners on the exciting advancements in the smart home industry. We want to teach people about the different types of home automation technologies on the market today and the benefits of using each of them. With this knowledge, homeowners can decide which smart home products best suite their lifestyle. </p>
+			<p style="text-decoration:justify; text-align:left; padding:0px 20px 20px 20px; font-size:15px; white-space:normal;"><b>2.</b> Connect homeowners with local smart home installers. The smart home industry is confusing enough as it is. Finding trusted smart home professionals shouldn't be confusing too. Who wants to sort through dozens of "pros" to find one who has good reviews and isn't going to charge you a fortune? Umm..NOBODY. Which is why our team at TruHome hand selects the most qualified service providers in the country. We don't settle for anything less than perfection.  </p>
+			<p style="text-decoration:justify; text-align:left; padding:0px 20px 20px 20px; font-size:15px; white-space:normal;"><b>3.</b> Simplify the process of maintaining a smart home by offering affordable service plans. Smart homes make life simpler. Maintaining your smart home should be simple too. That's why we offer annual service plans to homeowners who want peace of mind. If you ever experience issues with your smart home system we will send a technician to fix the problem immediately, free of charge. </p>
+		</div>
+		
+	  </div>
+	  <div class="item">
+		<h2> Our Happy Clients</h2>
+	  </div>
+	 
+	  <ion-slide-box on-slide-changed="slideChanged(index)" auto-play="true" does-continue="true" style="height:120px;">
+          <ion-slide><div style="height:80px;"><img src="images\clients\c1.png" style=" height:100%; width:100%;"></div></ion-slide>
+          <ion-slide><div style="height:80px;"><img src="images\clients\c2.png" style=" height:100%; width:100%;"></div></ion-slide>
+		  <ion-slide><div style="height:80px;"><img src="images\clients\c3.png" style=" height:100%; width:100%;"></div></ion-slide>
+		  <ion-slide><div style="height:80px;"><img src="images\clients\c4.png" style=" height:100%; width:100%;"></div></ion-slide>
+		  <ion-slide><div style="height:80px;"><img src="images\clients\c5.png" style=" height:100%; width:100%;"></div></ion-slide>
+		  <ion-slide><div style="height:80px;"><img src="images\clients\c6.png" style=" height:100%; width:100%;"></div></ion-slide>
+		  <ion-slide><div style="height:80px;"><img src="images\clients\c7.png" style=" height:100%; width:100%;"></div></ion-slide>
+		  <ion-slide><div style="height:80px;"><img src="images\clients\c8.png" style=" height:100%; width:100%;"></div></ion-slide>
         </ion-slide-box>
 	</ion-content>
   </ion-view>
@@ -129,48 +131,56 @@
   <ion-view view-title="Services">
 	<ion-content>
 	 	<div class="list">
-			<a class="item item-thumbnail-left" href="#">
-			  <img src="images/services/Full-Smart-Home-Systems.png" style="height:70px; width:70px;">
+			<a class="item item-thumbnail-left" href="#" style="padding-left: 75px;">
+			  <img src="images/services/Full-Smart-Home-Systems.png" style="height:50px; width:50px;">
 			  <h2 style="font-size:15px; white-space:normal;">Full Smart Home Systems</h2>
 			  <p style="white-space:normal;">Find a local home automation pro to install or service your smart home system.</p>
 			</a>
-			<a class="item item-thumbnail-left" href="#">
-			  <img src="images/services/Theater_icon.png" style="height:70px; width:70px;">
+			<a class="item item-thumbnail-left" href="#" style="padding-left: 75px;">
+			  <img src="images/services/Theater_icon.png" style="height:50px; width:50px;">
 			  <h2 style="font-size:15px; white-space:normal;">Theater and Entertainment</h2>
 			  <p style="white-space:normal;">Hire pros to install audio systems and home theaters.</p>
 			</a>
-			<a class="item item-thumbnail-left" href="#">
-			  <img src="images/services/hvac_icon.png" style="height:70px; width:70px;">
+			<a class="item item-thumbnail-left" href="#" style="padding-left: 75px;">
+			  <img src="images/services/hvac_icon.png" style="height:50px; width:50px;">
 			  <h2 style="font-size:15px; white-space:normal;">HVAC</h2>
 			  <p style="white-space:normal;">Lower your energy costs by upgrading your heating and air conditioning system with a smart thermostat.</p>
 			</a>
-			<a class="item item-thumbnail-left" href="#">
-			  <img src="images/services/lightning_icon.png" style="height:70px; width:70px;">
+			<a class="item item-thumbnail-left" href="#" style="padding-left: 75px;">
+			  <img src="images/services/lightning_icon.png" style="height:50px; width:50px;">
 			  <h2 style="font-size:15px; white-space:normal;">Lighting</h2>
 			  <p style="white-space:normal;">Cut back on your electricity bills with interior and exterior lighting solutions.</p>
 			</a>
-			<a class="item item-thumbnail-left" href="#">
-			  <img src="images/services/security.png" style="height:70px; width:70px;">
+			<a class="item item-thumbnail-left" href="#" style="padding-left: 75px;">
+			  <img src="images/services/security.png" style="height:50px; width:50px;">
 			  <h2 style="font-size:15px; white-space:normal;">Security & Surveillance</h2>
 			  <p style="white-space:normal;">Protect your home and family with state of the art security systems.</p>
 			</a>
-			<a class="item item-thumbnail-left" href="#">
-			  <img src="images/services/icon_metering.png" style="height:70px; width:70px;">
+			<a class="item item-thumbnail-left" href="#" style="padding-left: 75px;">
+			  <img src="images/services/icon_metering.png" style="height:50px; width:50px;">
 			  <h2 style="font-size:15px; white-space:normal;">Smart Metering</h2>
 			  <p style="white-space:normal;">Track your homes natural gas and electricity consumption.</p>
 			</a>
-			<a class="item item-thumbnail-left" href="#">
-			  <img src="images/services/commercial-automation_icon.png" style="height:70px; width:70px;">
+			<a class="item item-thumbnail-left" href="#" style="padding-left: 75px;"> 
+			  <img src="images/services/commercial-automation_icon.png" style="height:50px; width:50px;">
 			  <h2 style="font-size:15px; white-space:normal;">Commercial Automation Solutions</h2>
 			  <p style="white-space:normal;">Upgrade your business with innovative automation solutions.</p>
 			</a>
-			<a class="item item-thumbnail-left" href="#">
-			  <img src="images/services/other_automation.png" style="height:70px; width:70px;">
+			<a class="item item-thumbnail-left" href="#" style="padding-left: 75px;">
+			  <img src="images/services/other_automation.png" style="height:50px; width:50px;">
 			  <h2 style="font-size:15px; white-space:normal;">Other Automation Services</h2>
 			  <p style="white-space:normal;">Smart outlets and switches, irrigation systems, motorized shades, pool and spa controllers, solar panels, electric car charging stations and much more.</p>
 			</a>
 		</div>
 	</ion-content>
+  </ion-view>
+</script>
+
+<script id="templates/contactus.html" type="text/ng-template">
+  <ion-view view-title="Contact">
+	<ion-content scroll="false">
+      <map on-create="mapCreated(map)"></map>
+    </ion-content>
   </ion-view>
 </script>
 
@@ -232,120 +242,7 @@
 	</ion-content>
   </ion-view>
 </script>
-
+<script src="js/app.js"></script>
+<script src="js/controller.js"></script>
 </body>
-<script>
-angular.module('ionicApp', ['ionic','ngCordova','ngIOS9UIWebViewPatch'])
-
-.config(function($stateProvider, $urlRouterProvider) {
-
-  $stateProvider
-    .state('eventmenu', {
-      url: "/event",
-      abstract: true,
-      templateUrl: "templates/event-menu.html"
-    })
-    .state('eventmenu.home', {
-      url: "/home",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/home.html"
-        }
-      }
-    })
-    .state('eventmenu.checkin', {
-      url: "/check-in",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/check-in.html",
-          controller: "CheckinCtrl"
-        }
-      }
-    })
-	.state('eventmenu.about', {
-      url: "/about",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/about.html"
-        }
-      }
-    })
-	.state('eventmenu.services', {
-      url: "/services",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/services.html"
-        }
-      }
-    })
-	.state('eventmenu.sign-in', {
-      url: "/sign-in",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/sign-in.html",
-        }
-      }
-    })
-    .state('eventmenu.attendees', {
-      url: "/attendees",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/attendees.html",
-          controller: "AttendeesCtrl"
-        }
-      }
-    })
-  
-  $urlRouterProvider.otherwise("/event/check-in");
-})
-
-.controller('MainCtrl', function($scope, $ionicSideMenuDelegate) {
-  $scope.attendees = [
-    { firstname: 'Nicolas', lastname: 'Cage' },
-    { firstname: 'Jean-Claude', lastname: 'Van Damme' },
-    { firstname: 'Keanu', lastname: 'Reeves' },
-    { firstname: 'Steven', lastname: 'Seagal' }
-  ];
-  
-  $scope.toggleLeft = function() {
-    $ionicSideMenuDelegate.toggleLeft();
-  };
-})
-
-.controller('CheckinCtrl', function($scope) {
-  $scope.showForm = true;
-  
-  $scope.shirtSizes = [
-    { text: 'Large', value: 'L' },
-    { text: 'Medium', value: 'M' },
-    { text: 'Small', value: 'S' }
-  ];
-  
-  $scope.attendee = {};
-  $scope.submit = function() {
-    if(!$scope.attendee.firstname) {
-      alert('Info required');
-      return;
-    }
-    $scope.showForm = false;
-    $scope.attendees.push($scope.attendee);
-  };
-  
-})
-
-.controller('AttendeesCtrl', function($scope) {
-  
-  $scope.activity = [];
-  $scope.arrivedChange = function(attendee) {
-    var msg = attendee.firstname + ' ' + attendee.lastname;
-    msg += (!attendee.arrived ? ' has arrived, ' : ' just left, '); 
-    msg += new Date().getMilliseconds();
-    $scope.activity.push(msg);
-    if($scope.activity.length > 3) {
-      $scope.activity.splice(0, 1);
-    }
-  };
-  
-});
-</script>
 </html>
