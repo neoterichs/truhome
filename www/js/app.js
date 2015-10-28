@@ -1,6 +1,6 @@
 // JavaScript Document
-//var globalip = "192.168.1.3:1837";
-var globalip = "50.116.21.72:1837";
+var globalip = "45.79.145.23/truhome.co/public_html/phonegapservices";
+//var globalip = "192.168.1.10/ionic/truhome/services";
 var token = "";
 angular.module('ionicApp', ['ionic','ngCordova','ngIOS9UIWebViewPatch','starter.controllers'])
 .config(function($stateProvider, $urlRouterProvider) {
@@ -74,6 +74,7 @@ angular.module('ionicApp', ['ionic','ngCordova','ngIOS9UIWebViewPatch','starter.
       views: {
         'menuContent' :{
           templateUrl: "templates/emailus.html",
+		  controller: "emailCtrl"
         }
       }
     })

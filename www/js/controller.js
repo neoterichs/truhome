@@ -75,3 +75,39 @@ angular.module('starter.controllers', [])
 		});
 	};
 })
+
+.controller('emailCtrl', function($scope,$state,$http,$ionicPopup) {
+	$scope.user = {
+			name : '',
+			email : '',
+			website : '',
+			comments : ''
+	};
+	
+	$scope.sendemail = function(user){
+		var name = user.name;
+		var email = user.email;
+		var website = user.website;
+		var comments = user.comments;
+		
+		var data_parameters = "cont_name="+name+ "&cont_mail="+email+ "&cont_url="+website+ "&cont_message="+comments;
+		$http.post("http://"+globalip+"/email.php",data_parameters, {
+			headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}
+		})
+		.success(function(response){
+			if(response[0].status == "Y"){
+				$ionicPopup.show({
+				  template: '',
+				  title: 'Email sent successfully.',
+				  scope: $scope,
+				  buttons: [
+					{
+					  text: 'Ok',
+					  type: 'button-assertive'
+					},
+				  ]
+				})
+			}
+		});
+	}
+})
