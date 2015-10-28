@@ -179,7 +179,63 @@
 <script id="templates/contactus.html" type="text/ng-template">
   <ion-view view-title="Contact">
 	<ion-content scroll="false">
-      <map on-create="mapCreated(map)"></map>
+		<ul class="list">
+			<li><a href="#/event/getinformation" class="item item-icon-right">Get Information</a></li>
+			<li><a href="#/event/emailus" class="item item-icon-right">Email us</a></li>
+		</ul>
+      <map on-create="mapCreated(map)" style="height:70%"></map>
+    </ion-content>
+  </ion-view>
+</script>
+
+<script id="templates/emailus.html" type="text/ng-template">
+  <ion-view view-title="Email">
+	<ion-content>
+		<div class="list">
+			<label class="item item-input">
+				<span class="input-label">Name</span>
+				<input type="text">
+			</label>
+			<label class="item item-input">
+				<span class="input-label">Email</span>
+				<input type="text">
+			</label>
+			<label class="item item-input">
+				<span class="input-label">Website</span>
+				<input type="text">
+			</label>
+			<label class="item item-input">
+				<span class="input-label">Comments</span>
+				<input type="text">
+			</label>
+			<button class="button button-block button-dark">
+			  Send Message
+			</button>
+		</div>
+    </ion-content>
+  </ion-view>
+</script>
+
+<script id="templates/getinformation.html" type="text/ng-template">
+  <ion-view view-title="Office Information">
+	<ion-content>
+		<div class="list">
+			<a class="item item-icon-left" style="white-space: normal;">
+				<i class="icon ion-ios-location"></i>
+				TruHome Automation Tampa, FL33634, USA
+			</a>
+			
+			<a class="item item-icon-left" href="#">
+				<i class="icon ion-email"></i>
+				support@truhome.co
+			</a>
+			
+			<a class="item item-icon-left item-icon-right" href="tel:+12 345 678 000">
+				<i class="icon ion-iphone"></i>
+				+12 345 678 000
+				<i class="icon ion-ios-telephone-outline"></i>
+			</a>
+		</div>
     </ion-content>
   </ion-view>
 </script>
