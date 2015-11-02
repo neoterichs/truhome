@@ -8,7 +8,7 @@
 a{text-decoration: none; display:block; width:100%; color:#000;}
 
 /* header background color */
-.header-bar{background-color:#73D4C1; color:#FFF;}
+.header-bar{background-color:#73D4C1; color:#FFF; right:62px;}
 
 .sidemenu-bar{background-color:#222222; color:#FFF;}
 
@@ -32,30 +32,6 @@ a{text-decoration: none; display:block; width:100%; color:#000;}
 /* security design on selected */
 .custom-security_icon4{ color:#11C1F3;}
 .custom-security-icon4:hover {color:#11C1F3;}
-
-/* fan control image desing */
-.highimg{background-image:url(../images/fast_fan.svg); background-repeat:no-repeat;}
-.medimg{background-image:url(../images/medium_fan.svg); background-repeat:no-repeat; background-position:center; background-position:top;}
-.lowimg{ background-image:url(../images/slow_fan.svg);  background-repeat:no-repeat;}
-.offimg{background-image:url(../images/off_fan.svg); background-repeat:no-repeat;}
-
-/* fan control font color */
-.highimg_s{color:#000;}
-.medimg_s{color:#000;}
-.lowimg_s{color:#000;}
-.offimg_s{color:#000;}
-
-/* fan control image desing on selected */
-.highimg_blue{background-image:url(../images/fast_fan_blue.svg); background-repeat:no-repeat; background-position:center; background-position:top; }
-.medimg_blue{background-image:url(../images/medium_fan_blue.svg); background-repeat:no-repeat; background-position:center; background-position:top;}
-.lowimg_blue{ background-image:url(../images/slow_fan_blue.svg); background-repeat:no-repeat; background-position:center; background-position:top;}
-.offimg_blue{background-image:url(../images/off_fan_blue.svg); background-repeat:no-repeat; background-position:center; background-position:top;}
-
-/* fan control font color selected */
-.highimg_c{color:#11C1F3;}
-.medimg_c{color:#11C1F3;}
-.lowimg_c{color:#11C1F3;}
-.offimg_c{color:#11C1F3;}
 
 /* button of three lines */
 .custom-button{color:#FFF;}
@@ -90,5 +66,4 @@ map {
 .scroll {
   height: 100%;
 }
-
 

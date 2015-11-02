@@ -58,6 +58,7 @@ angular.module('ionicApp', ['ionic','ngCordova','ngIOS9UIWebViewPatch','starter.
       views: {
         'menuContent' :{
           templateUrl: "templates/sign-in.html",
+		  controller: 'SignInCtrl'
         }
       }
     })
@@ -84,6 +85,68 @@ angular.module('ionicApp', ['ionic','ngCordova','ngIOS9UIWebViewPatch','starter.
         'menuContent' :{
           templateUrl: "templates/attendees.html",
           controller: "AttendeesCtrl"
+        }
+      }
+    })
+	.state('eventmenu.account', {
+      url: "/account",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/account.html"
+        }
+      }
+    })
+	.state('eventmenu.profile', {
+      url: "/profile",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/profile.html",
+		  controller: "profileCtrl"
+        }
+      }
+    })
+	.state('eventmenu.changepassword', {
+      url: "/changepassword",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/changepassword.html",
+		  controller: "changepasswordCtrl"
+        }
+      }
+    })
+	.state('eventmenu.billinginfo', {
+      url: "/billinginfo",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/billinginfo.html",
+		  controller: "billinginfoCtrl"
+        }
+      }
+    })
+	.state('eventmenu.helpsupport', {
+      url: "/helpsupport",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/helpsupport.html",
+		  //controller: "helpsupportCtrl"
+        }
+      }
+    })
+	.state('eventmenu.history', {
+      url: "/history",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/history.html",
+		  //controller: "historyCtrl"
+        }
+      }
+    })
+	.state('eventmenu.logout', {
+      url: "/logout",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/logout.html",
+		  controller: "logoutCtrl"
         }
       }
     })
