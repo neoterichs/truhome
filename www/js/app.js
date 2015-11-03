@@ -123,6 +123,15 @@ angular.module('ionicApp', ['ionic','ngCordova','ngIOS9UIWebViewPatch','starter.
         }
       }
     })
+	.state('eventmenu.t_detail', {
+      url: "/t_detail/:order_id?transaction_id?t_date?amt",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/t_detail.html",
+		  controller: "t_detailCtrl"
+        }
+      }
+    })
 	.state('eventmenu.helpsupport', {
       url: "/helpsupport",
       views: {

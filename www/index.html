@@ -338,7 +338,7 @@
 </script>
 
 <script id="templates/profile.html" type="text/ng-template">
-  <ion-view view-title="{{user.Profiletitle}}">
+  <ion-view view-title="{{usertitle.Profiletitle}}">
 	<div class="bar bar-subheader" style="padding:0px;">
 	  <div class="button-bar">
         <button class="button button-light button-android" ng-class="{ 'button\-dark': demo == 'ios' }" ng-click="setPlatform('ios')"  ng-show="control.showbasictabprofile">
@@ -359,27 +359,54 @@
 		<div class="list" ng-show="control1.showBasicprofile">
 			<label class="item item-input">
 			  <span class="input-label">First Name</span>
-			  <input type="text" ng-model="user.username">
+			  <input type="text" ng-model="user.cust_first_nm">
 			</label>
 			<label class="item item-input">
 			  <span class="input-label">Last Name</span>
-			  <input type="text" ng-model="user.password">
+			  <input type="text" ng-model="user.cust_last_nm">
 			</label>
 			<label class="item item-input">
 			  <span class="input-label">Email Id</span>
-			  <input type="text" ng-model="user.password">
+			  <input type="text" ng-model="user.cust_email_id" disabled>
 			</label>
 			<label class="item item-input">
 			  <span class="input-label">DOB</span>
-			  <input type="text" ng-model="user.password">
+			  <input type="text" ng-model="user.cust_date_of_birth">
 			</label>
 			<label class="item item-input">
 			  <span class="input-label">Contact</span>
-			  <input type="text" ng-model="user.password">
+			  <input type="text" ng-model="user.cust_contact_no">
 			</label>
 			<label class="item item-input">
 			  <span class="input-label">Sign In</span>
-			  <input type="text" ng-model="user.password">
+			  <input type="text" value="Manual" disabled>
+			</label>
+		</div>
+		
+		<div class="list" ng-show="control1.showBasicprofile_tech">
+			<label class="item item-input">
+			  <span class="input-label">Company Name</span>
+			  <input type="text" ng-model="user.org_name">
+			</label>
+			<label class="item item-input">
+			  <span class="input-label">Email Id</span>
+			  <input type="text" ng-model="user.org_email_id" disabled>
+			</label>
+			<label class="item item-input">
+			  <span class="input-label">Remark</span>
+			  <input type="text" ng-model="user.org_rmrks">
+			</label>
+			<label class="item item-input">
+			  <span class="input-label">Description</span>
+			  <input type="text" ng-model="user.org_desc">
+			</label>
+			<label class="item item-input">
+			  <span class="input-label">Contact</span>
+			  <input type="text" ng-model="user.org_contact_no">
+			</label>
+			<label class="item item-input">
+			  <span class="input-label">Sign in</span>
+			  <input type="text" value="Manual" disabled>
 			</label>
 		</div>
 		
@@ -390,53 +417,80 @@
 			</label>
 			<label class="item item-input">
 			  <span class="input-label">Work Description</span>
-			  <input type="text" ng-model="user.password">
+			  <input type="text" ng-model="user.org_wrk_desc">
 			</label>
 			<label class="item item-input">
 			  <span class="input-label">Company URL</span>
-			  <input type="text" ng-model="user.password">
+			  <input type="text" ng-model="user.org_website_url">
 			</label>
 		</div>
 		
 		<div class="list" ng-show="control1.showAddressprofile">
 			<label class="item item-input">
-			  <span class="input-label">Address</span>
-			  <input type="text" ng-model="user.username">
+			  <span class="input-label">Address 1</span>
+			  <input type="text" ng-model="user.cust_loc_addr_ln1">
+			</label>
+			<label class="item item-input">
+			  <span class="input-label">Address 2</span>
+			  <input type="text" ng-model="user.cust_loc_addr_ln2">
 			</label>
 			<label class="item item-input">
 			  <span class="input-label">Country</span>
-			  <input type="text" ng-model="user.password">
+			  <input type="text" ng-model="user.cust_loc_country">
 			</label>
 			<label class="item item-input">
 			  <span class="input-label">State</span>
-			  <input type="text" ng-model="user.password">
+			  <input type="text" ng-model="user.cust_loc_state_nm">
 			</label>
 			<label class="item item-input">
 			  <span class="input-label">City</span>
-			  <input type="text" ng-model="user.password">
+			  <input type="text" ng-model="user.cust_loc_city_nm">
 			</label>
 			<label class="item item-input">
 			  <span class="input-label">Zipcode</span>
-			  <input type="text" ng-model="user.password">
+			  <input type="text" ng-model="user.cust_loc_zip">
+			</label>
+		</div>
+		
+		<div class="list" ng-show="control1.showAddressprofile_tech">
+			<label class="item item-input">
+			  <span class="input-label">Country</span>
+			  <input type="text" ng-model="user.org_bill_country">
+			</label>
+			<label class="item item-input">
+			  <span class="input-label">State</span>
+			  <input type="text" ng-model="user.org_loc_state_nm">
+			</label>
+			<label class="item item-input">
+			  <span class="input-label">City</span>
+			  <input type="text" ng-model="user.org_loc_city_nm">
+			</label>
+			<label class="item item-input">
+			  <span class="input-label">Zipcode</span>
+			  <input type="text" ng-model="user.org_loc_zip">
 			</label>
 		</div>
 		
 		<div class="list" ng-show="control1.showbillingAddressprofile">
 			<label class="item item-input">
-			  <span class="input-label">Billing Address</span>
-			  <input type="text" ng-model="user.username">
+			  <span class="input-label">Billing Address 1</span>
+			  <input type="text" ng-model="user.org_bill_addr_ln1">
+			</label>
+			<label class="item item-input">
+			  <span class="input-label">Billing Address 2</span>
+			  <input type="text" ng-model="user.org_bill_addr_ln2">
 			</label>
 			<label class="item item-input">
 			  <span class="input-label">Billing State</span>
-			  <input type="text" ng-model="user.password">
+			  <input type="text" ng-model="user.org_bill_region">
 			</label>
 			<label class="item item-input">
 			  <span class="input-label">Billing City</span>
-			  <input type="text" ng-model="user.password">
+			  <input type="text" ng-model="user.org_bill_city">
 			</label>
 			<label class="item item-input">
 			  <span class="input-label">Billing Zipcode</span>
-			  <input type="text" ng-model="user.password">
+			  <input type="text" ng-model="user.org_bill_zip">
 			</label>
 		</div>
 	</ion-content>
@@ -449,23 +503,26 @@
 		<div class="list">
 			<label class="item item-input">
 			  <span class="input-label">Old Password</span>
-			  <input type="text" ng-model="user.username">
+			  <input type="password" ng-model="user.opassword">
 			</label>
 			<label class="item item-input">
 			  <span class="input-label">New Password</span>
-			  <input type="text" ng-model="user.password">
+			  <input type="password" ng-model="user.npassword">
 			</label>
 			<label class="item item-input">
 			  <span class="input-label">Confirm Password</span>
-			  <input type="text" ng-model="user.password">
+			  <input type="password" ng-model="user.cpassword">
 			</label>
+			<button class="button button-block button-dark"  ng-click="changepassword(user)">
+			  Update
+			</button>
 		</div>
 	</ion-content>
   </ion-view>
 </script>
 
 <script id="templates/billinginfo.html" type="text/ng-template">
-  <ion-view view-title="{{user.Profiletitle}}">
+  <ion-view view-title="{{user_btitle.Profiletitle}}">
 	<div class="bar bar-subheader" style="padding:0px;">
 	  <div class="button-bar">
         <button class="button button-light button-android" ng-class="{ 'button\-dark': demo == 'ios' }" ng-click="setPlatform('ios')"  ng-show="bcontrol.showbasictabprofile">
@@ -486,73 +543,89 @@
 		<div class="list" ng-show="bcontrol1.showBasicprofile">
 			<label class="item item-input">
 			  <span class="input-label">Total Receipts</span>
-			  <input type="text" ng-model="user.username">
+			  <input type="text" ng-model="user.org_total_paid" disabled>
 			</label>
 			<label class="item item-input">
 			  <span class="input-label">Pending Amount</span>
-			  <input type="text" ng-model="user.password">
+			  <input type="text" value="0.00 USD" disabled>
 			</label>
 		</div>
 		
 		<div class="list" ng-show="bcontrol1.showworkprofile">
-			<label class="item item-input">
-			  <span class="input-label">Service Type</span>
-			  <input type="text" ng-model="user.username">
-			</label>
-			<label class="item item-input">
-			  <span class="input-label">Work Description</span>
-			  <input type="text" ng-model="user.password">
-			</label>
-			<label class="item item-input">
-			  <span class="input-label">Company URL</span>
-			  <input type="text" ng-model="user.password">
-			</label>
+			
 		</div>
 		
 		<div class="list" ng-show="bcontrol1.showAddressprofile">
 			<label class="item item-input">
-			  <span class="input-label">Address</span>
-			  <input type="text" ng-model="user.username">
+			  <span class="input-label">Product Name</span>
+			  <input type="text" ng-model="user.p_product_name" disabled>
 			</label>
 			<label class="item item-input">
-			  <span class="input-label">Country</span>
-			  <input type="text" ng-model="user.password">
-			</label>
-			<label class="item item-input">
-			  <span class="input-label">State</span>
-			  <input type="text" ng-model="user.password">
-			</label>
-			<label class="item item-input">
-			  <span class="input-label">City</span>
-			  <input type="text" ng-model="user.password">
-			</label>
-			<label class="item item-input">
-			  <span class="input-label">Zipcode</span>
-			  <input type="text" ng-model="user.password">
+			  <span class="input-label">Product Price</span>
+			  <input type="text" ng-model="user.p_amount" disabled>
 			</label>
 		</div>
 		
 		<div class="list" ng-show="bcontrol1.showbillingAddressprofile">
-			<label class="item item-input">
-			  <span class="input-label">Billing Address</span>
-			  <input type="text" ng-model="user.username">
-			</label>
-			<label class="item item-input">
-			  <span class="input-label">Billing State</span>
-			  <input type="text" ng-model="user.password">
-			</label>
-			<label class="item item-input">
-			  <span class="input-label">Billing City</span>
-			  <input type="text" ng-model="user.password">
-			</label>
-			<label class="item item-input">
-			  <span class="input-label">Billing Zipcode</span>
-			  <input type="text" ng-model="user.password">
-			</label>
+			<ion-refresher on-refresh="doRefresh()">
+			</ion-refresher>
+			<div class="list">
+				<ion-item  class="item row" ng-repeat="item in response" ng-if="response != 'City'">
+					<a style="font-size:14px; padding:5px 5px 5px 5px;" class="item-icon-right item-icon-right" ui-sref="eventmenu.t_detail({order_id: item.order_id,transaction_id:item.transaction_id,t_date:item.t_date,amt:item.amt})">
+						{{item.order_id}}&nbsp;&nbsp;{{item.transaction_id}}&nbsp;&nbsp;{{item.t_date}}
+						<i class="icon ion-ios-arrow-right icon-right"></i>
+					</a>
+				</ion-item>
+				
+				<div class="item"  ng-if="response == 'City'">
+					<h2><center>No Transaction</center></h2>
+				</div>
+			</div>
 		</div>
 	</ion-content>
   </ion-view>
 </script>
+
+<script id="templates/t_detail.html" type="text/ng-template">
+<ion-view title="Transaction Detail">
+	<ion-content>
+		<div class="list">
+			<label class="item item-input" style="height:40px;">
+				<div class="input-label" style=" width: 50%;">
+					<div class="col col-50">
+						<b>Order ID</b>
+					</div>
+				</div>
+				{{response}}
+			</label>
+			<label class="item  item-input" style="height:40px;">
+				<div class=" input-label" style=" width: 50%;">
+					<div class="col col-50">
+						<b>Transaction ID</b>
+					</div>
+				</div>
+				{{response1}}
+			</label>
+			<label class="item  item-input" style="height:40px;">
+				<div class=" input-label" style=" width: 50%;">
+					<div class="col col-50">
+						<b>Transaction Date</b>
+					</div>
+				</div>
+				{{response2}}
+			</label>
+			<label class="item  item-input" style="height:40px;">
+				<div class=" input-label" style=" width: 50%;">
+					<div class="col col-50">
+						<b>Amount</b>
+					</div>
+				</div>
+				{{response3}}
+			</label>
+		</div>
+	</ion-content>
+</ion-view>
+</script> 
 
 <script id="templates/helpsupport.html" type="text/ng-template">
   <ion-view view-title="Support">
