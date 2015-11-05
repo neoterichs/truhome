@@ -133,42 +133,42 @@
   <ion-view view-title="Services">
 	<ion-content>
 	 	<div class="list">
-			<a class="item item-thumbnail-left" href="#" style="padding-left: 75px;">
+			<a class="item item-thumbnail-left" ng-click="gotodetail('1')"  style="padding-left: 75px;">
 			  <img src="images/services/Full-Smart-Home-Systems.png" style="height:50px; width:50px;">
 			  <h2 style="font-size:15px; white-space:normal;">Full Smart Home Systems</h2>
 			  <p style="white-space:normal;">Find a local home automation pro to install or service your smart home system.</p>
 			</a>
-			<a class="item item-thumbnail-left" href="#" style="padding-left: 75px;">
+			<a class="item item-thumbnail-left" ng-click="gotodetail('2')"  style="padding-left: 75px;">
 			  <img src="images/services/Theater_icon.png" style="height:50px; width:50px;">
 			  <h2 style="font-size:15px; white-space:normal;">Theater and Entertainment</h2>
 			  <p style="white-space:normal;">Hire pros to install audio systems and home theaters.</p>
 			</a>
-			<a class="item item-thumbnail-left" href="#" style="padding-left: 75px;">
+			<a class="item item-thumbnail-left" ng-click="gotodetail('3')"  style="padding-left: 75px;">
 			  <img src="images/services/hvac_icon.png" style="height:50px; width:50px;">
 			  <h2 style="font-size:15px; white-space:normal;">HVAC</h2>
 			  <p style="white-space:normal;">Lower your energy costs by upgrading your heating and air conditioning system with a smart thermostat.</p>
 			</a>
-			<a class="item item-thumbnail-left" href="#" style="padding-left: 75px;">
+			<a class="item item-thumbnail-left" ng-click="gotodetail('4')" style="padding-left: 75px;">
 			  <img src="images/services/lightning_icon.png" style="height:50px; width:50px;">
 			  <h2 style="font-size:15px; white-space:normal;">Lighting</h2>
 			  <p style="white-space:normal;">Cut back on your electricity bills with interior and exterior lighting solutions.</p>
 			</a>
-			<a class="item item-thumbnail-left" href="#" style="padding-left: 75px;">
+			<a class="item item-thumbnail-left" ng-click="gotodetail('5')" style="padding-left: 75px;">
 			  <img src="images/services/security.png" style="height:50px; width:50px;">
 			  <h2 style="font-size:15px; white-space:normal;">Security & Surveillance</h2>
 			  <p style="white-space:normal;">Protect your home and family with state of the art security systems.</p>
 			</a>
-			<a class="item item-thumbnail-left" href="#" style="padding-left: 75px;">
+			<a class="item item-thumbnail-left" ng-click="gotodetail('6')" style="padding-left: 75px;">
 			  <img src="images/services/icon_metering.png" style="height:50px; width:50px;">
 			  <h2 style="font-size:15px; white-space:normal;">Smart Metering</h2>
 			  <p style="white-space:normal;">Track your homes natural gas and electricity consumption.</p>
 			</a>
-			<a class="item item-thumbnail-left" href="#" style="padding-left: 75px;"> 
+			<a class="item item-thumbnail-left" ng-click="gotodetail('7')" style="padding-left: 75px;"> 
 			  <img src="images/services/commercial-automation_icon.png" style="height:50px; width:50px;">
 			  <h2 style="font-size:15px; white-space:normal;">Commercial Automation Solutions</h2>
 			  <p style="white-space:normal;">Upgrade your business with innovative automation solutions.</p>
 			</a>
-			<a class="item item-thumbnail-left" href="#" style="padding-left: 75px;">
+			<a class="item item-thumbnail-left" ng-click="gotodetail('8')" style="padding-left: 75px;">
 			  <img src="images/services/other_automation.png" style="height:50px; width:50px;">
 			  <h2 style="font-size:15px; white-space:normal;">Other Automation Services</h2>
 			  <p style="white-space:normal;">Smart outlets and switches, irrigation systems, motorized shades, pool and spa controllers, solar panels, electric car charging stations and much more.</p>
@@ -177,6 +177,79 @@
 	</ion-content>
   </ion-view>
 </script>
+
+<script id="templates/s_detail.html" type="text/ng-template">
+<ion-view title="Pros Details">
+	<ion-content>
+	 	<div class="list">
+			<a class="item item-thumbnail-left" ui-sref="eventmenu.c_detail({image:data.image,name:data.name,detail:data.detail,state:data.state,city:data.city,website_url:data.website_url,zipcode:data.zipcode,contact:data.contact,orgid:data.orgid,serviceid:data.serviceid})" ng-repeat="data in response" ng-if="response != 'City'">
+			  <img src="{{data.image}}">
+			  <h2>{{data.name}}</h2>
+			  <rating ng-model="data1.rating" max="data1.max"></rating>
+			  <p style="white-space:normal;  word-wrap: break-word;">{{data.detail}}</p>
+			</a>
+			<a class="item" href="#" ng-if="response == 'City'" style="text-align:center">
+				No record found
+			</a>
+		</div>
+	</ion-content>
+</ion-view>
+</script> 
+
+<script id="templates/c_detail.html" type="text/ng-template">
+<ion-view title="Pros Details">
+	<ion-content>
+		<div class="list">
+			<a class="item item-thumbnail-left">
+			  <img ng-src="{{cimage}}">
+			  <h2>{{name}}</h2>
+			  <p style="white-space:normal;  word-wrap: break-word;">{{detail}}</p>
+			</a>
+			<label class="item item-input" style="height:40px;">
+				<div class="input-label" style=" width: 30%;">
+					<div class="col col-25">
+						<b>State</b>
+					</div>
+				</div>
+				{{state}}
+			</label>
+			<label class="item item-input" style="height:40px;">
+				<div class="input-label" style=" width: 30%;">
+					<div class="col col-25">
+						<b>City</b>
+					</div>
+				</div>
+				{{city}}
+			</label>
+			<label class="item item-input" style="height:40px;">
+				<div class="input-label" style=" width: 30%;">
+					<div class="col col-25">
+						<b>Url</b>
+					</div>
+				</div>
+				{{website}}
+			</label>
+			<label class="item item-input" style="height:40px;" ng-click="showcontact()">
+				<div class="input-label" style=" width:30%;">
+					<div class="col col-25">
+						<b>Contact</b>
+					</div>
+				</div>
+				<u ng-show="control.notshowcontact">Click to show contact</u>
+				<span ng-show="control.showcontact">{{contact}}</span>
+			</label>
+			<label class="item item-input" style="height:40px;">
+				<div class="input-label" style=" width:30%;">
+					<div class="col col-25">
+						<b>Zipcode</b>
+					</div>
+				</div>
+				{{zipcode}}
+			</label>
+		</div>
+	</ion-content>
+</ion-view>
+</script> 
 
 <script id="templates/contactus.html" type="text/ng-template">
   <ion-view view-title="Contact">
@@ -413,7 +486,7 @@
 		<div class="list" ng-show="control1.showworkprofile">
 			<label class="item item-input">
 			  <span class="input-label">Service Type</span>
-			  <input type="text" ng-model="user.username">
+			  <oi-select oi-options="item.name for item in shopArr track by item.id" ng-model="bundle" multiple placeholder="Select"></oi-select>
 			</label>
 			<label class="item item-input">
 			  <span class="input-label">Work Description</span>
