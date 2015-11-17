@@ -70,14 +70,14 @@
             </div>
             <p style="text-align:center; color:#FFF; margin-top:-380px; line-height:1.2; font-size:28px;">
               Welcome to <strong>TruHome</strong>
-			<p style="text-align:center; color:#FFF; font-size:18px; line-height:1.2;">The Premier Source For Home Automation Professionals.</p>
+			<p style="text-align:center; color:#DC143C; font-size:18px; line-height:1.2;">The Premier Source For Home Automation Professionals.</p>
 			</p>
           </ion-slide>
           <ion-slide>
             <div id="logo">
               <img src="images\slider\bg2.jpg" style=" height:100%; width:100%;">
             </div>
-            <p style="font-weight:bold; text-align:center; color:#FFF; line-height:1.2; margin-top:-380px; font-size:28px; text-align-center;">
+            <p style="font-weight:bold; text-align:center; color:#FF1493; line-height:1.2; margin-top:-380px; font-size:28px; text-align-center;">
               Find Your Smart Home Pro Today
             </p>
           </ion-slide>
@@ -85,8 +85,8 @@
             <div id="logo">
               <img src="images\slider\bg3.jpg" style=" height:100%; width:100%;">
 			</div>
-            <p style="font-weight:bold; text-align:center; color:#FFF; line-height:1.2; margin-top:-380px; font-size:28px; text-align-center;">
-              Connect Your Wearable Devices to Your Smart <span style="color:#444444">Home</span>
+            <p style="font-weight:bold; text-align:center; color:#FF1493; line-height:1.2; margin-top:-380px; font-size:28px; text-align-center;">
+              Connect Your Wearable Devices to Your Smart <span style="color:#008080">Home</span>
             </p>
           </ion-slide>
         </ion-slide-box>
@@ -229,14 +229,22 @@
 				</div>
 				{{website}}
 			</label>
-			<label class="item item-input" style="height:40px;" ng-click="showcontact()">
+			<label class="item item-input" style="height:40px;" ng-click="showcontact()"  ng-show="control.notshowcontact">
 				<div class="input-label" style=" width:30%;">
 					<div class="col col-25">
 						<b>Contact</b>
 					</div>
 				</div>
-				<u ng-show="control.notshowcontact">Click to show contact</u>
+				<u>Click to show contact</u>
 				<span ng-show="control.showcontact">{{contact}}</span>
+			</label>
+			<label class="item item-input" style="height:40px;" ng-show="control.showcontact">
+				<div class="input-label" style=" width:30%;">
+					<div class="col col-25">
+						<b>Contact</b>
+					</div>
+				</div>
+				<span>{{contact}}</span>
 			</label>
 			<label class="item item-input" style="height:40px;">
 				<div class="input-label" style=" width:30%;">
@@ -428,7 +436,7 @@
         </button>
       </div>
 	</div>
-	<ion-content class="has-header">
+	<ion-content class="has-subheader">
 		<div class="list" ng-show="control1.showBasicprofile">
 			<label class="item item-input">
 			  <span class="input-label">First Name</span>
@@ -454,6 +462,9 @@
 			  <span class="input-label">Sign In</span>
 			  <input type="text" value="Manual" disabled>
 			</label>
+			<button class="button button-block button-dark"  ng-click="user_b_profile(user)">
+			  Update
+			</button>
 		</div>
 		
 		<div class="list" ng-show="control1.showBasicprofile_tech">
@@ -481,6 +492,9 @@
 			  <span class="input-label">Sign in</span>
 			  <input type="text" value="Manual" disabled>
 			</label>
+			<button class="button button-block button-dark"  ng-click="user_tb_profile(user)">
+			  Update
+			</button>
 		</div>
 		
 		<div class="list" ng-show="control1.showworkprofile">
@@ -496,6 +510,9 @@
 			  <span class="input-label">Company URL</span>
 			  <input type="text" ng-model="user.org_website_url">
 			</label>
+			<button class="button button-block button-dark"  ng-click="user_tw_profile(user)">
+			  Update
+			</button>
 		</div>
 		
 		<div class="list" ng-show="control1.showAddressprofile">
@@ -523,6 +540,9 @@
 			  <span class="input-label">Zipcode</span>
 			  <input type="text" ng-model="user.cust_loc_zip">
 			</label>
+			<button class="button button-block button-dark"  ng-click="user_a_profile(user)">
+			  Update
+			</button>
 		</div>
 		
 		<div class="list" ng-show="control1.showAddressprofile_tech">
@@ -542,6 +562,9 @@
 			  <span class="input-label">Zipcode</span>
 			  <input type="text" ng-model="user.org_loc_zip">
 			</label>
+			<button class="button button-block button-dark"  ng-click="user_ta_profile(user)">
+			  Update
+			</button>
 		</div>
 		
 		<div class="list" ng-show="control1.showbillingAddressprofile">
@@ -565,6 +588,9 @@
 			  <span class="input-label">Billing Zipcode</span>
 			  <input type="text" ng-model="user.org_bill_zip">
 			</label>
+			<button class="button button-block button-dark"  ng-click="user_tbill_profile(user)">
+			  Update
+			</button>
 		</div>
 	</ion-content>
   </ion-view>

@@ -133,6 +133,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('SignInCtrl', function($scope,$state,$http,$ionicPopup,$rootScope) {
+	$scope.user = {utype : 'C'};
 	$scope.signIn = function(user) {
 		var username = user.username;
 		var password = user.password;
@@ -251,7 +252,7 @@ angular.module('starter.controllers', [])
 	}
 })
 
-.controller('profileCtrl', function($scope,$rootScope,$state,$window,$http) {
+.controller('profileCtrl', function($scope,$rootScope,$state,$window,$http,$ionicPopup) {
 	
 	$scope.demo = 'ios';
 	$scope.usertitle = {Profiletitle : "Basic"};
@@ -318,6 +319,194 @@ angular.module('starter.controllers', [])
 		}
 	});
 	//get profile info end
+	
+	//update user profile
+	$scope.user_b_profile = function(user){
+		var firstname = user.cust_first_nm;
+		var lastname = user.cust_last_nm;
+		var dob = user.cust_date_of_birth;
+		var contactno = user.cust_contact_no;
+		var profiletype = "basic";
+		
+		var data_parameters = "first_name="+firstname+ "&last_name="+lastname+ "&contact_no="+contactno+ "&user_id="+globaluserid+ "&sloc_id="+slocid+ "&profile="+profiletype;
+		$http.post("http://"+globalip+"/update_cust_profile.php",data_parameters,{
+			headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}
+		})
+		.success(function(response) {
+			if(response[0].status != "N"){
+				$ionicPopup.show({
+					  template: '',
+					  title: "Profile updated successfully",
+					  scope: $scope,
+					  buttons: [
+						{ 
+						  text: 'Ok',
+						  type: 'button-calm'
+						},
+					  ]
+				})
+				
+			}
+		});
+	}
+	//update user profile end 
+	
+	//update user address profile
+	$scope.user_a_profile = function(user){
+		var address1 = user.cust_loc_addr_ln1;
+		var address2 = user.cust_loc_addr_ln2;
+		var country = user.cust_loc_country;
+		var locstate = user.cust_loc_state_nm;
+		var loccity = user.cust_loc_city_nm;
+		var loczip = user.cust_loc_zip;
+		var profiletype = "address";
+		
+		var data_parameters = "address1="+address1+ "&address2="+address2+ "&country="+country+ "&locstate="+locstate+ "&loccity="+loccity+ "&loczip="+loczip+ "&profile="+profiletype+ "&user_id="+globaluserid+ "&sloc_id="+slocid;
+		$http.post("http://"+globalip+"/update_cust_profile.php",data_parameters,{
+			headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}
+		})
+		.success(function(response) {
+			if(response[0].status != "N"){
+				$ionicPopup.show({
+					  template: '',
+					  title: "Profile updated successfully",
+					  scope: $scope,
+					  buttons: [
+						{ 
+						  text: 'Ok',
+						  type: 'button-calm'
+						},
+					  ]
+				})
+				
+			}
+		});
+	}
+	//update user address profile end 
+	
+	//update tech basic profile
+	$scope.user_tb_profile = function(user){
+		var org_name = user.org_name;
+		var org_email_id = user.org_email_id;
+		var org_rmrks = user.org_rmrks;
+		var org_desc = user.org_desc;
+		var org_contact_no = user.org_contact_no;
+		var profiletype = "basic";
+		
+		var data_parameters = "org_name="+org_name+ "&org_rmrks="+org_rmrks+ "&org_desc="+org_desc+ "&org_contact_no="+org_contact_no+ "&profile="+profiletype+ "&user_id="+globaluserid+ "&sloc_id="+slocid;
+		$http.post("http://"+globalip+"/update_tech_profile.php",data_parameters,{
+			headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}
+		})
+		.success(function(response) {
+			if(response[0].status != "N"){
+				$ionicPopup.show({
+					  template: '',
+					  title: "Profile updated successfully",
+					  scope: $scope,
+					  buttons: [
+						{ 
+						  text: 'Ok',
+						  type: 'button-calm'
+						},
+					  ]
+				})
+				
+			}
+		});
+	}
+	//update tech basic profile
+	
+	//update tech address profile
+	$scope.user_ta_profile = function(user){
+		var org_bill_country = user.org_bill_country;
+		var org_loc_state_nm = user.org_loc_state_nm;
+		var org_loc_city_nm = user.org_loc_city_nm;
+		var org_loc_zip = user.org_loc_zip;
+		var profiletype = "address";
+		
+		var data_parameters = "org_bill_country="+org_bill_country+ "&org_loc_state_nm="+org_loc_state_nm+ "&org_loc_city_nm="+org_loc_city_nm+ "&org_loc_zip="+org_loc_zip+ "&profile="+profiletype+ "&user_id="+globaluserid+ "&sloc_id="+slocid;
+		$http.post("http://"+globalip+"/update_tech_profile.php",data_parameters,{
+			headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}
+		})
+		.success(function(response) {
+			if(response[0].status != "N"){
+				$ionicPopup.show({
+					  template: '',
+					  title: "Profile updated successfully",
+					  scope: $scope,
+					  buttons: [
+						{ 
+						  text: 'Ok',
+						  type: 'button-calm'
+						},
+					  ]
+				})
+				
+			}
+		});
+	}
+	//update tech address profile
+	
+	//update tech billing address profile
+	$scope.user_tbill_profile = function(user){
+		var org_bill_addr_ln1 = user.org_bill_addr_ln1;
+		var org_bill_addr_ln2 = user.org_bill_addr_ln2;
+		var org_bill_region = user.org_bill_region;
+		var org_bill_city = user.org_bill_city;
+		var org_bill_zip = user.org_bill_zip;
+		var profiletype = "billing";
+		
+		var data_parameters = "org_bill_addr_ln1="+org_bill_addr_ln1+ "&org_bill_addr_ln2="+org_bill_addr_ln2+ "&org_bill_region="+org_bill_region+ "&org_bill_city="+org_bill_city+ "&org_bill_zip="+org_bill_zip+ "&profile="+profiletype+ "&user_id="+globaluserid+ "&sloc_id="+slocid;
+		$http.post("http://"+globalip+"/update_tech_profile.php",data_parameters,{
+			headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}
+		})
+		.success(function(response) {
+			if(response[0].status != "N"){
+				$ionicPopup.show({
+					  template: '',
+					  title: "Profile updated successfully",
+					  scope: $scope,
+					  buttons: [
+						{ 
+						  text: 'Ok',
+						  type: 'button-calm'
+						},
+					  ]
+				})
+				
+			}
+		});
+	}
+	//update tech billing address profile
+	
+	//update tech work profile
+	$scope.user_tw_profile = function(user){
+		var org_wrk_desc = user.org_wrk_desc;
+		var org_website_url = user.org_website_url;
+		var profiletype = "work";
+		
+		var data_parameters = "org_wrk_desc="+org_wrk_desc+ "&org_website_url="+org_website_url+ "&profile="+profiletype+ "&user_id="+globaluserid+ "&sloc_id="+slocid;
+		$http.post("http://"+globalip+"/update_tech_profile.php",data_parameters,{
+			headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}
+		})
+		.success(function(response) {
+			if(response[0].status != "N"){
+				$ionicPopup.show({
+					  template: '',
+					  title: "Profile updated successfully",
+					  scope: $scope,
+					  buttons: [
+						{ 
+						  text: 'Ok',
+						  type: 'button-calm'
+						},
+					  ]
+				})
+				
+			}
+		});
+	}
+	//update tech work profile
 })
 
 .controller('changepasswordCtrl', function($scope,$ionicPopup,$state,$http) {
