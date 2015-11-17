@@ -8,7 +8,7 @@
         Magnum Energy Solutions Dev Team
     </author>
     <content src="index.html" />
-	<plugin name="cordova-plugin-whitelist" version="1" />
+	<!--<plugin name="cordova-plugin-whitelist" version="1" />-->
     <preference name="permissions" value="none" />
     <preference name="phonegap-version" value="3.7.0" />
     <preference name="orientation" value="portrait" />
