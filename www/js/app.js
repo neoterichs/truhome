@@ -107,23 +107,7 @@ angular.module('ionicApp', ['ionic','ionic.rating','ngCordova','ngIOS9UIWebViewP
         }
       }
     })
-	.state('eventmenu.account', {
-      url: "/account",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/account.html"
-        }
-      }
-    })
-	.state('eventmenu.profile', {
-      url: "/profile",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/profile.html",
-		  controller: "profileCtrl"
-        }
-      }
-    })
+	
 	.state('eventmenu.changepassword', {
       url: "/changepassword",
       views: {
@@ -133,24 +117,8 @@ angular.module('ionicApp', ['ionic','ionic.rating','ngCordova','ngIOS9UIWebViewP
         }
       }
     })
-	.state('eventmenu.billinginfo', {
-      url: "/billinginfo",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/billinginfo.html",
-		  controller: "billinginfoCtrl"
-        }
-      }
-    })
-	.state('eventmenu.t_detail', {
-      url: "/t_detail/:order_id?transaction_id?t_date?amt",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/t_detail.html",
-		  controller: "t_detailCtrl"
-        }
-      }
-    })
+	
+	
 	.state('eventmenu.helpsupport', {
       url: "/helpsupport",
       views: {

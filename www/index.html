@@ -42,7 +42,7 @@
 		  <a href="#/event/services" class="item item-icon-left" menu-close><i class="icon ion-android-apps"></i>Services</a>
 		  <a href="#/event/contactus" class="item item-icon-left" menu-close><i class="icon ion-android-pin"></i>Contact us</a>
 		  <a href="#/event/sign-in" class="item item-icon-left" menu-close ng-show="control.showLogin" ><i class="icon ion-log-in"></i>Sign in</a>
-		  <a href="#/event/account" class="item item-icon-left" menu-close ng-show="control.showAccount"><i class="icon ion-person"></i>Account</a>
+		  
 		  <a href="#/event/logout" class="item item-icon-left" menu-close ng-show="control.showLogout"><i class="icon ion-log-out"></i>Logout</a>
 		</ul>
 	  </ion-content>
@@ -70,14 +70,14 @@
             </div>
             <p style="text-align:center; color:#FFF; margin-top:-380px; line-height:1.2; font-size:28px;">
               Welcome to <strong>TruHome</strong>
-			<p style="text-align:center; color:#DC143C; font-size:18px; line-height:1.2;">The Premier Source For Home Automation Professionals.</p>
+			<p style="text-align:center; color:#fff; font-size:18px; line-height:1.2;">The Premier Source For Home Automation Professionals.</p>
 			</p>
           </ion-slide>
           <ion-slide>
             <div id="logo">
               <img src="images\slider\bg2.jpg" style=" height:100%; width:100%;">
             </div>
-            <p style="font-weight:bold; text-align:center; color:#FF1493; line-height:1.2; margin-top:-380px; font-size:28px; text-align-center;">
+            <p style="font-weight:bold; text-align:center; color:#fff; line-height:1.2; margin-top:-380px; font-size:28px; text-align-center;">
               Find Your Smart Home Pro Today
             </p>
           </ion-slide>
@@ -85,7 +85,7 @@
             <div id="logo">
               <img src="images\slider\bg3.jpg" style=" height:100%; width:100%;">
 			</div>
-            <p style="font-weight:bold; text-align:center; color:#FF1493; line-height:1.2; margin-top:-380px; font-size:28px; text-align-center;">
+            <p style="font-weight:bold; text-align:center; color:#fff; line-height:1.2; margin-top:-380px; font-size:28px; text-align-center;">
               Connect Your Wearable Devices to Your Smart <span style="color:#008080">Home</span>
             </p>
           </ion-slide>
@@ -384,217 +384,9 @@
   </ion-view>
 </script>
 
-<script id="templates/account.html" type="text/ng-template">
-  <ion-view view-title="Account">
-		<ion-content class="has-header">
-            <ul class="list">
-                <li class="item">
-                    <a href="#/event/profile" class="item-icon-left item-icon-right"><i class="button icon ion-ios-person-outline button-clear button-positive" style="padding-top:8px;"></i> Profile
-                         <i class="icon ion-ios-arrow-right"></i>
-                    </a>
-                </li>
-                <li class="item">
-                    <a href="#/event/changepassword" class="item-icon-left item-icon-right"><i class="button icon ion-ios-locked-outline button-clear button-positive" style="padding-top:8px;"></i> Change Password
-                         <i class="icon ion-ios-arrow-right"></i>
-                    </a>
-                </li>
-                <li class="item">
-                    <a href="#/event/billinginfo" class="item-icon-left item-icon-right"><i class="button icon ion-ios-calculator-outline button-clear button-positive" style="padding-top:8px;"></i> Billing Information
-                         <i class="icon ion-ios-arrow-right"></i>
-                    </a>
-                </li>
-				<li class="item">
-                    <a href="#/event/helpsupport" class="item-icon-left item-icon-right"><i class="button icon ion-ios-telephone-outline button-clear button-positive" style="padding-top:8px;"></i> Help & Support
-                         <i class="icon ion-ios-arrow-right"></i>
-                    </a>
-                </li>
-				<li class="item">
-                    <a href="#/event/history" class="item-icon-left item-icon-right"><i class="button icon ion-ios-albums-outline button-clear button-positive" style="padding-top:8px;"></i> Click History
-                         <i class="icon ion-ios-arrow-right"></i>
-                    </a>
-                </li>
-			</ul>
-        </ion-content>
-	</ion-view>
-</script>
 
-<script id="templates/profile.html" type="text/ng-template">
-  <ion-view view-title="{{usertitle.Profiletitle}}">
-	<div class="bar bar-subheader">
-	  <div class="button-bar">
-        <button class="button button-light button-android" ng-class="{ 'button\-dark': demo == 'ios' }" ng-click="setPlatform('ios')"  ng-show="control.showbasictabprofile">
-          Basic
-        </button>
-       	<button class="button button-light button-android" ng-class="{ 'button\-dark': demo == 'ionic' }" ng-click="setPlatform('ionic')" ng-show="control.showworktabprofile">
-          Work Info
-        </button>
-		<button class="button button-light button-android" ng-class="{ 'button\-dark': demo == 'ionic1' }" ng-click="setPlatform('ionic1')"  ng-show="control.showaddresstabprofile">
-          Address
-        </button>
-		<button class="button button-light button-android" ng-class="{ 'button\-dark': demo == 'ionic2' }" ng-click="setPlatform('ionic2')" ng-show="control.showbillingtabprofile">
-          Billing Address
-        </button>
-      </div>
-	</div>
-	<ion-content class="has-subheader">
-		<div class="list" ng-show="control1.showBasicprofile">
-			<label class="item item-input">
-			  <span class="input-label">First Name</span>
-			  <input type="text" ng-model="user.cust_first_nm">
-			</label>
-			<label class="item item-input">
-			  <span class="input-label">Last Name</span>
-			  <input type="text" ng-model="user.cust_last_nm">
-			</label>
-			<label class="item item-input">
-			  <span class="input-label">Email Id</span>
-			  <input type="text" ng-model="user.cust_email_id" disabled>
-			</label>
-			<label class="item item-input">
-			  <span class="input-label">DOB</span>
-			  <input type="text" ng-model="user.cust_date_of_birth">
-			</label>
-			<label class="item item-input">
-			  <span class="input-label">Contact</span>
-			  <input type="text" ng-model="user.cust_contact_no">
-			</label>
-			<label class="item item-input">
-			  <span class="input-label">Sign In</span>
-			  <input type="text" value="Manual" disabled>
-			</label>
-			<button class="button button-block button-dark"  ng-click="user_b_profile(user)">
-			  Update
-			</button>
-		</div>
-		
-		<div class="list" ng-show="control1.showBasicprofile_tech">
-			<label class="item item-input">
-			  <span class="input-label">Company Name</span>
-			  <input type="text" ng-model="user.org_name">
-			</label>
-			<label class="item item-input">
-			  <span class="input-label">Email Id</span>
-			  <input type="text" ng-model="user.org_email_id" disabled>
-			</label>
-			<label class="item item-input">
-			  <span class="input-label">Remark</span>
-			  <input type="text" ng-model="user.org_rmrks">
-			</label>
-			<label class="item item-input">
-			  <span class="input-label">Description</span>
-			  <input type="text" ng-model="user.org_desc">
-			</label>
-			<label class="item item-input">
-			  <span class="input-label">Contact</span>
-			  <input type="text" ng-model="user.org_contact_no">
-			</label>
-			<label class="item item-input">
-			  <span class="input-label">Sign in</span>
-			  <input type="text" value="Manual" disabled>
-			</label>
-			<button class="button button-block button-dark"  ng-click="user_tb_profile(user)">
-			  Update
-			</button>
-		</div>
-		
-		<div class="list" ng-show="control1.showworkprofile">
-			<label class="item item-input">
-			  <span class="input-label">Service Type</span>
-			  <oi-select oi-options="item.name for item in shopArr track by item.id" ng-model="bundle" multiple placeholder="Select"></oi-select>
-			</label>
-			<label class="item item-input">
-			  <span class="input-label">Work Description</span>
-			  <input type="text" ng-model="user.org_wrk_desc">
-			</label>
-			<label class="item item-input">
-			  <span class="input-label">Company URL</span>
-			  <input type="text" ng-model="user.org_website_url">
-			</label>
-			<button class="button button-block button-dark"  ng-click="user_tw_profile(user)">
-			  Update
-			</button>
-		</div>
-		
-		<div class="list" ng-show="control1.showAddressprofile">
-			<label class="item item-input">
-			  <span class="input-label">Address 1</span>
-			  <input type="text" ng-model="user.cust_loc_addr_ln1">
-			</label>
-			<label class="item item-input">
-			  <span class="input-label">Address 2</span>
-			  <input type="text" ng-model="user.cust_loc_addr_ln2">
-			</label>
-			<label class="item item-input">
-			  <span class="input-label">Country</span>
-			  <input type="text" ng-model="user.cust_loc_country">
-			</label>
-			<label class="item item-input">
-			  <span class="input-label">State</span>
-			  <input type="text" ng-model="user.cust_loc_state_nm">
-			</label>
-			<label class="item item-input">
-			  <span class="input-label">City</span>
-			  <input type="text" ng-model="user.cust_loc_city_nm">
-			</label>
-			<label class="item item-input">
-			  <span class="input-label">Zipcode</span>
-			  <input type="text" ng-model="user.cust_loc_zip">
-			</label>
-			<button class="button button-block button-dark"  ng-click="user_a_profile(user)">
-			  Update
-			</button>
-		</div>
-		
-		<div class="list" ng-show="control1.showAddressprofile_tech">
-			<label class="item item-input">
-			  <span class="input-label">Country</span>
-			  <input type="text" ng-model="user.org_bill_country">
-			</label>
-			<label class="item item-input">
-			  <span class="input-label">State</span>
-			  <input type="text" ng-model="user.org_loc_state_nm">
-			</label>
-			<label class="item item-input">
-			  <span class="input-label">City</span>
-			  <input type="text" ng-model="user.org_loc_city_nm">
-			</label>
-			<label class="item item-input">
-			  <span class="input-label">Zipcode</span>
-			  <input type="text" ng-model="user.org_loc_zip">
-			</label>
-			<button class="button button-block button-dark"  ng-click="user_ta_profile(user)">
-			  Update
-			</button>
-		</div>
-		
-		<div class="list" ng-show="control1.showbillingAddressprofile">
-			<label class="item item-input">
-			  <span class="input-label">Billing Address 1</span>
-			  <input type="text" ng-model="user.org_bill_addr_ln1">
-			</label>
-			<label class="item item-input">
-			  <span class="input-label">Billing Address 2</span>
-			  <input type="text" ng-model="user.org_bill_addr_ln2">
-			</label>
-			<label class="item item-input">
-			  <span class="input-label">Billing State</span>
-			  <input type="text" ng-model="user.org_bill_region">
-			</label>
-			<label class="item item-input">
-			  <span class="input-label">Billing City</span>
-			  <input type="text" ng-model="user.org_bill_city">
-			</label>
-			<label class="item item-input">
-			  <span class="input-label">Billing Zipcode</span>
-			  <input type="text" ng-model="user.org_bill_zip">
-			</label>
-			<button class="button button-block button-dark"  ng-click="user_tbill_profile(user)">
-			  Update
-			</button>
-		</div>
-	</ion-content>
-  </ion-view>
-</script>
+
+
 
 <script id="templates/changepassword.html" type="text/ng-template">
   <ion-view view-title="Change Password">
@@ -620,111 +412,6 @@
   </ion-view>
 </script>
 
-<script id="templates/billinginfo.html" type="text/ng-template">
-  <ion-view view-title="{{user_btitle.Profiletitle}}">
-	<div class="bar bar-subheader">
-	  <div class="button-bar">
-        <button class="button button-light button-android" ng-class="{ 'button\-dark': demo == 'ios' }" ng-click="setPlatform('ios')"  ng-show="bcontrol.showbasictabprofile">
-          Summary
-        </button>
-       	<button class="button button-light button-android" ng-class="{ 'button\-dark': demo == 'ionic' }" ng-click="setPlatform('ionic')" ng-show="bcontrol.showworktabprofile">
-          Pending Payment
-        </button>
-		<button class="button button-light button-android" ng-class="{ 'button\-dark': demo == 'ionic1' }" ng-click="setPlatform('ionic1')"  ng-show="bcontrol.showaddresstabprofile">
-          Payment Methods
-        </button>
-		<button class="button button-light button-android" ng-class="{ 'button\-dark': demo == 'ionic2' }" ng-click="setPlatform('ionic2')" ng-show="bcontrol.showbillingtabprofile">
-          Transaction History
-        </button>
-      </div>
-	</div>
-	<ion-content  class="has-subheader">
-		<div class="list" ng-show="bcontrol1.showBasicprofile">
-			<label class="item item-input">
-			  <span class="input-label">Total Receipts</span>
-			  <input type="text" ng-model="user.org_total_paid" disabled>
-			</label>
-			<label class="item item-input">
-			  <span class="input-label">Pending Amount</span>
-			  <input type="text" value="0.00 USD" disabled>
-			</label>
-		</div>
-		
-		<div class="list" ng-show="bcontrol1.showworkprofile">
-			
-		</div>
-		
-		<div class="list" ng-show="bcontrol1.showAddressprofile">
-			<label class="item item-input">
-			  <span class="input-label">Product Name</span>
-			  <input type="text" ng-model="user.p_product_name" disabled>
-			</label>
-			<label class="item item-input">
-			  <span class="input-label">Product Price</span>
-			  <input type="text" ng-model="user.p_amount" disabled>
-			</label>
-		</div>
-		
-		<div class="list" ng-show="bcontrol1.showbillingAddressprofile">
-			<ion-refresher on-refresh="doRefresh()">
-			</ion-refresher>
-			<div class="list">
-				<ion-item  class="item row" ng-repeat="item in response" ng-if="response != 'City'">
-					<a style="font-size:14px; padding:5px 5px 5px 5px;" class="item-icon-right item-icon-right" ui-sref="eventmenu.t_detail({order_id: item.order_id,transaction_id:item.transaction_id,t_date:item.t_date,amt:item.amt})">
-						{{item.order_id}}&nbsp;&nbsp;{{item.transaction_id}}&nbsp;&nbsp;{{item.t_date}}
-						<i class="icon ion-ios-arrow-right icon-right"></i>
-					</a>
-				</ion-item>
-				
-				<div class="item"  ng-if="response == 'City'">
-					<h2><center>No Transaction</center></h2>
-				</div>
-			</div>
-		</div>
-	</ion-content>
-  </ion-view>
-</script>
-
-<script id="templates/t_detail.html" type="text/ng-template">
-<ion-view title="Transaction Detail">
-	<ion-content>
-		<div class="list">
-			<label class="item item-input" style="height:40px;">
-				<div class="input-label" style=" width: 50%;">
-					<div class="col col-50">
-						<b>Order ID</b>
-					</div>
-				</div>
-				{{response}}
-			</label>
-			<label class="item  item-input" style="height:40px;">
-				<div class=" input-label" style=" width: 50%;">
-					<div class="col col-50">
-						<b>Transaction ID</b>
-					</div>
-				</div>
-				{{response1}}
-			</label>
-			<label class="item  item-input" style="height:40px;">
-				<div class=" input-label" style=" width: 50%;">
-					<div class="col col-50">
-						<b>Transaction Date</b>
-					</div>
-				</div>
-				{{response2}}
-			</label>
-			<label class="item  item-input" style="height:40px;">
-				<div class=" input-label" style=" width: 50%;">
-					<div class="col col-50">
-						<b>Amount</b>
-					</div>
-				</div>
-				{{response3}}
-			</label>
-		</div>
-	</ion-content>
-</ion-view>
-</script> 
 
 <script id="templates/helpsupport.html" type="text/ng-template">
   <ion-view view-title="Support">

@@ -1,7 +1,8 @@
 <?php 
 session_start();
 error_reporting(E_ALL ^ E_NOTICE);
-$db = pg_connect("host=45.79.212.193 port=5432 dbname=truhome user=postgres password=admin123")
+//$db = pg_connect("host=45.79.212.193 port=5432 dbname=truhome user=postgres password=admin123")
+$db = pg_connect("host=45.79.145.23 port=5432 dbname=truhome user=postgres password=Nislinode$1")
 or die("unable");
 $ip = "http://www.truhome.co/phonegapservices/";
 header("Access-Control-Allow-Origin: *");
