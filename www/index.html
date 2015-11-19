@@ -338,15 +338,15 @@
 		  <span class="input-label">Password</span>
 		  <input type="password" ng-model="user.password">
 		</label>
+		<label class="item item-input">
+			<span class="input-label">User type</span>
+			<select ng-model="user.utype" ng-selected="user.utype == 'C'">
+		  		<option selected value="C">Customer</option>
+		  		<option value="T">Company</option>
+			</select>
+	  </label>
 	</div>
-	<ul class="list">
-			<li class="item-checkbox">
-				 <label class="checkbox">
-				   <input type="checkbox" ng-model="user.remember">
-				 </label>
-			 Remember me
-			</li>
-	</ul>
+	
 	<div>
 		<button class="button button-block login-button" ng-click="signIn(user)">
 		  Sign-In
@@ -384,30 +384,30 @@
 
 <script id="templates/account.html" type="text/ng-template">
   <ion-view view-title="Account">
-		<ion-content class="has-header">
+		<ion-content>
             <ul class="list">
                 <li class="item">
-                    <a href="#/event/profile" class="item-icon-left item-icon-right"><i class="button icon ion-ios-person-outline button-clear button-positive" style="padding-top:8px;"></i> Profile
+                    <a href="#/event/profile" class="item-icon-left item-icon-right"><i class="button icon ion-ios-person-outline button-clear button-positive"></i> Profile
                          <i class="icon ion-ios-arrow-right"></i>
                     </a>
                 </li>
                 <li class="item">
-                    <a href="#/event/changepassword" class="item-icon-left item-icon-right"><i class="button icon ion-ios-locked-outline button-clear button-positive" style="padding-top:8px;"></i> Change Password
+                    <a href="#/event/changepassword" class="item-icon-left item-icon-right"><i class="button icon ion-ios-locked-outline button-clear button-positive"></i> Change Password
                          <i class="icon ion-ios-arrow-right"></i>
                     </a>
                 </li>
                 <li class="item">
-                    <a href="#/event/billinginfo" class="item-icon-left item-icon-right"><i class="button icon ion-ios-calculator-outline button-clear button-positive" style="padding-top:8px;"></i> Billing Information
+                    <a href="#/event/billinginfo" class="item-icon-left item-icon-right"><i class="button icon ion-ios-calculator-outline button-clear button-positive"></i> Billing Information
                          <i class="icon ion-ios-arrow-right"></i>
                     </a>
                 </li>
 				<li class="item">
-                    <a href="#/event/helpsupport" class="item-icon-left item-icon-right"><i class="button icon ion-ios-telephone-outline button-clear button-positive" style="padding-top:8px;"></i> Help & Support
+                    <a href="#/event/helpsupport" class="item-icon-left item-icon-right"><i class="button icon ion-ios-telephone-outline button-clear button-positive"></i> Help & Support
                          <i class="icon ion-ios-arrow-right"></i>
                     </a>
                 </li>
 				<li class="item">
-                    <a href="#/event/history" class="item-icon-left item-icon-right"><i class="button icon ion-ios-albums-outline button-clear button-positive" style="padding-top:8px;"></i> Click History
+                    <a href="#/event/history" class="item-icon-left item-icon-right"><i class="button icon ion-ios-albums-outline button-clear button-positive"></i> Click History
                          <i class="icon ion-ios-arrow-right"></i>
                     </a>
                 </li>
