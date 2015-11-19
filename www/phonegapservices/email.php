@@ -28,15 +28,13 @@ $headers .= 'From: k.karma@neoterichs.com' . "\r\n" .
 //mail($to, $subject, $message, $headers);
 //insert code
 $list = array();
-$q_3 = pg_query("select send_mail_truhome('".$_POST['cont_name']."','".$_POST['cont_mail']."','".$_POST['cont_url']."','".$_POST['cont_message']."')");
-echo "send_mail_truhome('".$_POST['cont_name']."','".$_POST['cont_mail']."','".$_POST['cont_url']."','".$_POST['cont_message']."')";
+$q_3 = pg_query("INSERT INTO ".'users.usr$contact_usr'." (cnt_nm, cnt_email, cnt_website, cnt_comment)VALUES ('".$_POST['cont_name']."','".$_POST['cont_mail']."','".$_POST['cont_url']."','".$_POST['cont_message']."')");
+
 if($q_3){
 	$list[] = array('status' => "Y");
 }else{ 
 	$list[] = array('status' => "N");
 }
-
-
 
 echo json_encode($list);
 ?>
