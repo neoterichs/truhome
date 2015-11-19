@@ -1,8 +1,8 @@
 // JavaScript Document
-var globalip = "45.79.212.193/truhome.co/public_html/phonegapservices";
+var globalip = "45.79.145.23/truhome.co/public_html/phonegapservices";
 //var globalip = "192.168.1.10/ionic/truhome/services";
 var token = "";
-angular.module('ionicApp', ['ionic','ionic.rating','ngCordova','ngIOS9UIWebViewPatch','starter.controllers'])
+angular.module('ionicApp', ['ionic','ngCordova','ngIOS9UIWebViewPatch','starter.controllers'])
 .config(function($stateProvider, $urlRouterProvider) {
 
   $stateProvider
@@ -40,26 +40,7 @@ angular.module('ionicApp', ['ionic','ionic.rating','ngCordova','ngIOS9UIWebViewP
       url: "/services",
       views: {
         'menuContent' :{
-          templateUrl: "templates/services.html",
-		  controller: "servicesCtrl"
-        }
-      }
-    })
-	.state('eventmenu.s_detail', {
-      url: "/s_detail/:serviceid",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/s_detail.html",
-		  controller: "s_detailCtrl"
-        }
-      }
-    })
-	.state('eventmenu.c_detail', {
-      url: "/c_detail/:image?name?detail?state?city?website_url?zipcode?contact?serviceid?orgid",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/c_detail.html",
-		  controller: "c_detailCtrl"
+          templateUrl: "templates/services.html"
         }
       }
     })
